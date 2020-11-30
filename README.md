@@ -1,6 +1,6 @@
-# IBM Cloud Kubernetes Admin
+# IBM Cloud Modules Provisioner
 
-This tool was made to manage large IBM Cloud accounts and the Kubernetes Clusters in it.
+The IBM Cloud Modules Provisioner helps to provision the terraform modules in an IBM Cloud or OpenShift environment.
 
 ## 1. Run Dev Mode
 
@@ -73,4 +73,3 @@ The Wealthcare Application is licensed under Apache-2.0 License.
 ## Thanks
 
 The base source was taken from (Software developer advocate @IBM) https://github.com/moficodes/ibmcloud-kubernetes-admin
-
