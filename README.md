@@ -60,16 +60,16 @@ go run cmd/web/main.go
 
 This would start the project on port `9000` and go backend will serve the frontend.
 
-## License
+## 3. License
 
 The Wealthcare Application is licensed under Apache-2.0 License.
 
-## Tools and Technologies
+## 4. Tools and Technologies
 
-- Backend is written in Go 1.13
-- React
+- Backend : Go 1.13
+- Frontend : React
 
 
-## Thanks
+--------
 
-The base source was taken from (Software developer advocate @IBM) https://github.com/moficodes/ibmcloud-kubernetes-admin
+The base source was taken from (Software developer advocate @IBM) https://github.com/moficodes/ibmcloud-kubernetes-admin.
