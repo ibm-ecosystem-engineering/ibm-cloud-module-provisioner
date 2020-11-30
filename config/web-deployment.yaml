@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  admin
+  labels:
+    run:  admin
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run:  admin
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run:  admin
+    spec:
+      containers:
+      - image:  moficodes/ibmcloud-kubernetes-admin:v0.2.12
+        imagePullPolicy: Always
+        name:  kubeadmin
+        env:
+          - name: CLOUDANT_USER_NAME
+            valueFrom: 
+              secretKeyRef:
+                name: cloudant-secret
+                key: username
+          - name: CLOUDANT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: cloudant-secret
+                key: password
+          - name: CLOUDANT_HOST
+            valueFrom:
+              secretKeyRef:
+                name: cloudant-secret
+                key: host
+          - name: TICKER_PERIOD
+            value: "3600"
+          - name: SENDGRID_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: sendgrid-secret
+                key: apikey
+          - name: ADMIN_FROM_EMAIL
+            value: iksadmin@ibm.com
+          - name: ADMIN_TO_EMAIL
+            value: "moficodes@ibm.com,awesome@ibm.com"
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 4Gi
+          requests:
+            cpu: 1000m
+            memory: 4Gi
+      restartPolicy: Always

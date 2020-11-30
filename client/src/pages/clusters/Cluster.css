@@ -1,0 +1,39 @@
+.status {
+  height: .75rem;
+  width: .75rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .5rem;
+}
+
+.normal {
+  background-color: var(--support-02);
+}
+
+.warning {
+  background-color: var(--support-03);
+}
+
+.critical {
+  background-color: var(--support-01);
+}
+
+.deleting {
+  background-color: var(--text-02);
+}
+
+.oneline {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logo-image {
+  width: 1rem;
+  height: 1rem;
+  margin-right: .25rem;
+}
+
+.tag-input {
+  padding: 0px;
+  margin: auto;
+}

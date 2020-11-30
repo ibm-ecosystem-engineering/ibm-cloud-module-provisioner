@@ -1,0 +1,354 @@
+{
+    "module":[
+          {
+            "provider": "k8s",
+            "name": "OpenShift cluster",
+            "location": "https://github.com/ibm-garage-cloud/terraform-k8s-ocp-cluster",
+            "features": "M",
+            "latestrelease": "v2.4.1",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "k8s",
+            "name": "Namespace",
+            "location": "https://github.com/ibm-garage-cloud/terraform-k8s-namespace.git",
+            "features": "M",
+            "latestrelease": "v2.6.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "k8s",
+            "name": "Service Account",
+            "location": "https://github.com/ibm-garage-cloud/terraform-k8s-namespace.git",
+            "features": "M",
+            "latestrelease": "v1.4.0",
+            "category": "todo"
+          }      
+          ,
+          {
+            "provider": "k8s",
+            "name": "Operator Lifecycle Manager",
+            "location": "https://github.com/ibm-garage-cloud/terraform-k8s-olm.git",
+            "features": "",
+            "latestrelease": "v1.2.2",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "k8s",
+            "name": "ArgoCD",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-argocd.git",
+            "features": "",
+            "latestrelease": "v2.10.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Artifactory",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-artifactory.git",
+            "features": "G,M",
+            "latestrelease": "v1.9.2",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Developer Dashboard",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-dashboard.git",
+            "features": "G",
+            "latestrelease": "v1.10.1",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Jaeger",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-jaeger.git",
+            "features": "",
+            "latestrelease": "v1.6.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Jenkins",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-jenkins.git",
+            "features": "",
+            "latestrelease": "v1.4.2",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Kafka",
+            "location": "https://github.com/ibm-garage-cloud/terraform-k8s-kafka.git",
+            "features": "",
+            "latestrelease": "v1.0.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Nexus",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-nexus.git",
+            "features": "",
+            "latestrelease":  "v1.2.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Pact Broker",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-pactbroker.git",
+            "features": "",
+            "latestrelease":  "v1.4.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Prometheus Grafana",
+            "location": "generic/tools/prometheusgrafana_release",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "SonarQube",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-sonarqube.git",
+            "features": "G",
+            "latestrelease":  "v1.9.1",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Swagger Editor",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-swaggereditor.git",
+            "features": "",
+            "latestrelease":  "v1.4.0",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Tekton",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-tekton.git",
+            "features": "G",
+            "latestrelease":  "v2.0.1",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Tekton Resources",
+            "location": "https://github.com/ibm-garage-cloud/terraform-tools-tekton-resources.git",
+            "features": "",
+            "latestrelease": "v2.1.11",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Service",
+            "location": "https",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "k8s",
+            "name": "Service",
+            "location": "https",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }        
+          ,
+          {
+            "provider": "IBM",
+            "name": "IBM Cloud Cluster",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-container-platform.git",
+            "features": "M",
+            "latestrelease": "v1.18.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Cloud Operator",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-cloud-operator/tree/v1.0.0",
+            "features": "M,G",
+            "latestrelease": "v1.0.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Activity Tracker",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-activity-tracker.git",
+            "features": "",
+            "latestrelease": "v1.1.1",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "AppId",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-appid.git",
+            "features": "",
+            "latestrelease": "v1.1.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Cloud Object Storage",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-object-storage.git",
+            "features": "",
+            "latestrelease": "v2.0.1",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Cloudant",
+            "location": "cloud-managed/services/cloudant",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Key Protect",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-key-protect.git",
+            "features": "",
+            "latestrelease": "v1.3.1",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "LogDNA",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-logdna.git",
+            "features": "",
+            "latestrelease": "v1.0.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Databases for MongoDB",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-mongodb.git",
+            "features": "",
+            "latestrelease": "v1.0.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Databases for Redis",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-redis.git",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "PostGreSQL",
+            "location": "cloud-managed/services/postgres",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "SysDig",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-sysdig.git",
+            "features": "",
+            "latestrelease": "v2.3.3",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Watson Assistant",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-watson-assistant.git",
+            "features": "",
+            "latestrelease": "v1.0.0",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Watson Studio",
+            "location": "https://github.com/ibm-garage-cloud/terraform-ibm-watson-studio.git",
+            "features": "",
+            "latestrelease": "v1.1.1",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "AppId operator",
+            "location": "cloud-managed/operator-services/appid",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Cloud Object Storage operator",
+            "location": "cloud-managed/operator-services/cloud_object_storage",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "Cloudant operator",
+            "location": "cloud-managed/operator-services/cloudant",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "LogDNA operator",
+            "location": "cloud-managed/operator-services/logdna",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "PostGreSQL operator",
+            "location": "cloud-managed/operator-services/postgres",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+          ,
+          {
+            "provider": "IBM",
+            "name": "SysDig operator",
+            "location": "cloud-managed/operator-services/sysdig",
+            "features": "",
+            "latestrelease": "",
+            "category": "todo"
+          }
+        ]
+      }
