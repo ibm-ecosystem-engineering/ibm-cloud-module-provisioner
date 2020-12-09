@@ -32,6 +32,8 @@ func main() {
 	api.HandleFunc("/resourcegroups/{accountID}", server.ResourceGroupHandler).Methods(http.MethodGet)
 
 	// public endpoints
+	api.HandleFunc("/provisioner/cloud-modules", server.CloudModulesEndpointHandler).Methods(http.MethodGet)
+	api.HandleFunc("/provisioner/provision", server.ProvisionHandler).Methods(http.MethodPost)
 
 	api.HandleFunc("/clusters/versions", server.VersionEndpointHandler).Methods(http.MethodGet)
 	api.HandleFunc("/clusters/locations", server.LocationEndpointHandler).Methods(http.MethodGet)

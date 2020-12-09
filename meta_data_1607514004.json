@@ -1,0 +1,30 @@
+{
+ "account": "cloud-native",
+ "cluster": "gan-cluster",
+ "module": [
+  {
+   "provider": "",
+   "name": "ArgoCD",
+   "location": "",
+   "features": "",
+   "latestrelease": "",
+   "category": ""
+  },
+  {
+   "provider": "",
+   "name": "Jenkins",
+   "location": "",
+   "features": "",
+   "latestrelease": "",
+   "category": ""
+  },
+  {
+   "provider": "",
+   "name": "Swagger Editor",
+   "location": "",
+   "features": "",
+   "latestrelease": "",
+   "category": ""
+  }
+ ]
+}

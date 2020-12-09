@@ -1,0 +1,68 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ibm-cloud-module-provisioner-frontweb
+  namespace: ibm-cloud-module-provisioner-ocp-ns
+  labels:
+    app: ibm-cloud-module-provisioner-application
+    subname: frontweb
+spec:
+  selector:
+    matchLabels:
+      app: ibm-cloud-module-provisioner-application
+      subname: frontweb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ibm-cloud-module-provisioner-application
+        subname: frontweb
+    spec:
+      containers:
+        - name: container-frontweb
+          image: "gandhicloudlab/ibm-cloud-module-provisioner-dev:0.0.1"
+          # image: "jp.icr.io/gan-acc-registry-ns-01/ibm-cloud-module-provisioner-frontweb-test1-fintech-ocp:0.0.1"
+          imagePullPolicy: Always
+          ports:
+            - name: my-http
+              containerPort: 9000
+              protocol: TCP
+          env:
+          envFrom:
+            - configMapRef:
+                name: ibm-cloud-module-provisioner-configmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ibm-cloud-module-provisioner-frontweb
+  namespace: ibm-cloud-module-provisioner-ocp-ns
+  labels:
+    app: ibm-cloud-module-provisioner-application
+    subname: frontweb
+spec:
+  type: LoadBalancer
+  ports:
+    - name: my-http
+      port: 80
+      targetPort: my-http
+  selector:
+    app: ibm-cloud-module-provisioner-application
+    subname: frontweb
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ibm-cloud-module-provisioner-frontweb
+  namespace: ibm-cloud-module-provisioner-ocp-ns
+  labels:
+    app: ibm-cloud-module-provisioner-application
+    subname: frontweb
+spec:
+  path: /
+  to:
+    kind: Service
+    name: ibm-cloud-module-provisioner-frontweb
+    weight: 100
+  port:
+    targetPort: my-http

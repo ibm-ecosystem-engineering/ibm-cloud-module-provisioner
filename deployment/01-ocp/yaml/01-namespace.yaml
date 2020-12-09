@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ibm-cloud-module-provisioner-ocp-ns
+  labels:
+    app: ibm-cloud-module-provisioner-application
