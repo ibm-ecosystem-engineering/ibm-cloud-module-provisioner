@@ -76,6 +76,8 @@ class Provisioner extends Component {
         console.log('API Response : ', apiResponse);
         NotificationManager.success('Reequest created successfully', 'Module Provisioner');
        
+        this.onClickClearSelections();
+
         return apiResponse;
       } catch (e) {
         console.log('Error onClickProvision', e);
@@ -97,6 +99,18 @@ class Provisioner extends Component {
       if (module.name == id) {
         module.category = cat;
       }
+      return module;
+    });
+
+    this.setState({
+      ...this.state,
+      modules
+    });
+  }
+
+  onClickClearSelections = () => {
+    let modules = cloudmodules.module.filter((module) => {
+      module.category = "todo";
       return module;
     });
 
@@ -215,6 +229,13 @@ class Provisioner extends Component {
                 size="default"
               > 
                 Provision
+              </Button>
+              &nbsp; &nbsp; &nbsp;
+              <Button
+                onClick={() => this.onClickClearSelections()}
+                size="default"
+              > 
+                Clear
               </Button>
           </div>
         </div>
