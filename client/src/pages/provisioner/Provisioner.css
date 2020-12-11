@@ -18,6 +18,12 @@
     overflow-y: auto;
   }
 
+  .refereneName {
+    width: 320px;
+  }
+
+  
+
   .selectedBody {
     width: 320px;
     height: 55vh;

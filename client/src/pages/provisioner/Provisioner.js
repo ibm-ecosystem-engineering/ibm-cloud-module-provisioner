@@ -1,5 +1,5 @@
 import React, { Component,useState } from 'react';
-
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {
   Form,
   Grid,
@@ -17,7 +17,7 @@ import {
 // import CardSectionSimple from '@carbon/ibmdotcom-react/es/components/CardSectionSimple/CardSectionSimple';
 
 import './Provisioner.css';
-
+import 'react-notifications/lib/notifications.css';
 import cloudmodules from "./cloud-modules";
 
 
@@ -31,10 +31,56 @@ class Provisioner extends Component {
     //   ]
   }
 
-  onClickProvision = () => {
-    console.log ("To be provisioned");
-  }
+  getSelectedModulesRequest = () => {
 
+    let selectedModules = cloudmodules.module.filter( function (module) {
+      console.log('module.category  ....' + module.category);
+        return module.category === "done";    
+      });
+
+    console.log('getSelectedModulesRequest ....', selectedModules);
+
+    return selectedModules;
+  };
+  
+  onClickProvision = async () => {
+
+      console.log('onClickProvision ..... ');
+
+      // var referenceName = this.state.referenceName;
+      var curTime = new Date().toLocaleString();
+      var referenceName = "Provisioner-" + curTime;
+      var accountID = localStorage.getItem('accountID');
+      var clusterID = localStorage.getItem('clusterID');
+      var selectedModulesRequest = this.getSelectedModulesRequest();
+      console.log('onClickProvision .....referenceName: ' + referenceName);
+      console.log('onClickProvision .....selectedModulesRequest: ' + selectedModulesRequest);
+
+      try {
+
+        const apiResponse = await fetch(
+          '/api/v1/provisioner/provision',
+          {
+            method: 'post',
+
+            body: JSON.stringify({
+              referencename: referenceName,
+              date: curTime,
+              account: accountID,
+              cluster: clusterID,
+              module: selectedModulesRequest
+            }),
+          },
+          3
+        );
+        console.log('API Response : ', apiResponse);
+        NotificationManager.success('Reequest created successfully', 'Module Provisioner');
+       
+        return apiResponse;
+      } catch (e) {
+        console.log('Error onClickProvision', e);
+      }
+  };
 
   shouldProvisionEnabled = () => {
     return true;
@@ -65,12 +111,12 @@ class Provisioner extends Component {
     ev.dataTransfer.setData("id", id);
   }
 
+  onReferenceNameChange(event) {
+    this.state.referenceName = event.target.value;
+  }
+
   render() {
     var tasks = {
-      todo: [],
-      done: []
-    }
-    var tasksCards = {
       todo: [],
       done: []
     }
@@ -99,9 +145,9 @@ class Provisioner extends Component {
     });
 
     return (
-      <div>
+      <div><Form>
       <div class="bx--grid">
-        <h2> IBM Cloud Module Provisioner</h2>
+        <h2> Module Provisioner</h2>
         <p  class="labelGrey">The IBM Cloud Modules Provisioner list a collection of terraform modules that can be selected and provisioned to an environment in an IBM Cloud or OpenShift environment.</p>
         <br></br>
         <div className="bx--row">
@@ -114,6 +160,11 @@ class Provisioner extends Component {
         </div>
         <br></br>
         <div className="bx--row">
+          <div className="bx--col-md-8">
+            <NotificationContainer/>
+          </div>
+        </div>
+        <div className="bx--row">
             <div className="bx--col-md-6">
                 <div className="bx--tile availableHeader">
                   <h4><span>  Available Modules</span></h4>
@@ -125,6 +176,7 @@ class Provisioner extends Component {
               </div>
             </div>
         </div>
+
         <div className="bx--row">
             <div className="bx--col-md-6">
                 <div className="availableBody"
@@ -134,6 +186,14 @@ class Provisioner extends Component {
                 </div>
             </div>
             <div className="bx--col-md-2">
+              {/* <TextInput
+                labelText=""
+                id="refereneName"
+                className="tag-text-input refereneName"
+                placeholder="Reference Name"
+                value="this.state.refereneName"
+                onChange={(e) => this.onReferenceNameChange(e)}
+              /> */}
               <div className="selectedBody"
                 onDrop={(e) => this.onDrop(e, "done")}
                 onDragOver={(ev) => this.onDragOver(ev)}>
@@ -144,25 +204,22 @@ class Provisioner extends Component {
               <p class="labelGrey">Drag and drop the required terraform modules into the selected modules section</p>
             </div>
         </div>
+
         <div className="bx--row">
           <div className="bx--col-md-6">
           </div>
           <div className="bx--col-md-2">
             <Button
                 enabled={this.shouldProvisionEnabled()}
-                onClick={this.onClickProvision()}
+                onClick={() => this.onClickProvision()}
                 size="default"
               > 
                 Provision
               </Button>
           </div>
         </div>
+    </div></Form>
       </div>
-      </div>
-
-
-
-
     );
   }
 }

@@ -27,6 +27,8 @@ type Module struct {
 }
 
 type ModulesProvision struct {
+	ReferenceName    string    `json:"referencename"`
+	Date    string    `json:"date"`
 	Account    string    `json:"account"`
 	Cluster    string    `json:"cluster"`
 	Modules []Module `json:"module"`
@@ -74,7 +76,6 @@ func (s *Server) ProvisionHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(body)
 	// if err := session.CreateAdminEmails(body.AccountID, body.Email...); err != nil {
 	// 	handleError(w, http.StatusInternalServerError, "could not create", err.Error())
 	// 	return
