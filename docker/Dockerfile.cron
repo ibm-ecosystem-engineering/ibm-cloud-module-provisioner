@@ -1,4 +1,4 @@
-FROM ubuntu:xenial as builder
+FROM ubuntu:xenial-20210114 as builder
 
 # RUN mkdir /user && \
 #     echo 'nobody:x:65534:65534:nobody:/:' > /user/passwd && \
@@ -28,7 +28,7 @@ RUN CGO_ENABLED=0 /usr/local/go/bin/go build \
     -installsuffix 'static' \
     -o /app ./cmd/cron/main.go
 
-FROM ubuntu:xenial
+FROM ubuntu:xenial-20210114
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crtca
 COPY --from=builder /usr/local/bin/ibmcloud /usr/local/bin/ibmcloud
